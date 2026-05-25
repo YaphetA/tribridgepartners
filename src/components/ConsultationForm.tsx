@@ -166,8 +166,12 @@ export default function ConsultationForm() {
                   <span className="text-gold-gradient">Consultation</span>
                 </h2>
                 <p className="text-white/50 text-lg leading-relaxed">
-                  Tell us about your business and we&apos;ll prepare for your
-                  call. Written proposal delivered within 48 hours.
+                  Fill in a few details and we&apos;ll come prepared. Most
+                  clients are fully onboarded and live within{" "}
+                  <span className="text-white/80 font-medium">
+                    10 business days
+                  </span>{" "}
+                  of signing.
                 </p>
               </div>
 
@@ -353,7 +357,7 @@ export default function ConsultationForm() {
                 </button>
 
                 <p className="text-white/30 text-xs text-center">
-                  We&apos;ll respond within 24 hours · Proposal within 48 hours · No obligation
+                  We&apos;ll be in touch within 24 hours · No obligation
                 </p>
               </form>
             </motion.div>

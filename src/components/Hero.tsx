@@ -12,6 +12,12 @@ const fadeUp: Variants = {
   }),
 };
 
+const stats = [
+  { number: "10", unit: "business days", label: "to go fully live" },
+  { number: "48", unit: "hour", label: "proposal turnaround" },
+  { number: "40%", unit: "avg.", label: "cost saving vs. in-house" },
+];
+
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-[#0A1628]">
@@ -40,6 +46,7 @@ export default function Hero() {
             animate="visible"
             className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-[#C9A84C]/30 bg-[#C9A84C]/8 mb-8"
           >
+            <span className="w-1.5 h-1.5 rounded-full bg-[#C9A84C]" />
             <span className="text-[#E4C87A] text-sm font-medium tracking-wide">
               Serving Clients Globally
             </span>
@@ -68,14 +75,9 @@ export default function Hero() {
             animate="visible"
             className="text-white/60 text-xl lg:text-2xl leading-relaxed mb-10 max-w-2xl"
           >
-            Scale your business with expertly trained, dedicated remote teams
-            and streamlined outsourced operations —{" "}
-            <span className="text-white/90 font-medium">
-              proposal within 48 hours
-            </span>
-            , full onboarding in{" "}
-            <span className="text-white/90 font-medium">10 business days</span>
-            .
+            Expertly trained, dedicated remote teams and fully managed
+            outsourced operations — no recruitment costs, no overhead, and no
+            compromise on quality.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -84,13 +86,13 @@ export default function Hero() {
             variants={fadeUp}
             initial="hidden"
             animate="visible"
-            className="flex flex-col sm:flex-row gap-4"
+            className="flex flex-col sm:flex-row gap-4 mb-14"
           >
             <a
               href="#contact"
               className="group inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-[#C9A84C] hover:bg-[#E4C87A] text-[#0A1628] font-semibold text-base rounded-xl transition-all duration-200 shadow-2xl shadow-[#C9A84C]/25 hover:shadow-[#C9A84C]/40 hover:-translate-y-0.5"
             >
-              Book a Free Consultation
+              Get a Free Proposal
               <ArrowRight
                 size={18}
                 className="group-hover:translate-x-1 transition-transform"
@@ -103,6 +105,35 @@ export default function Hero() {
               <Play size={16} className="fill-white" />
               Explore Services
             </a>
+          </motion.div>
+
+          {/* Stats strip */}
+          <motion.div
+            custom={4}
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            className="flex flex-col sm:flex-row gap-6 sm:gap-0 sm:divide-x sm:divide-white/10"
+          >
+            {stats.map((stat) => (
+              <div
+                key={stat.label}
+                className="sm:pr-8 sm:last:pr-0 sm:first:pl-0 sm:pl-8"
+              >
+                <div className="flex items-baseline gap-1.5 mb-1">
+                  <span
+                    className="text-4xl font-bold text-white"
+                    style={{ fontFamily: "var(--font-playfair)" }}
+                  >
+                    {stat.number}
+                  </span>
+                  <span className="text-[#C9A84C] text-sm font-semibold uppercase tracking-wider">
+                    {stat.unit}
+                  </span>
+                </div>
+                <p className="text-white/40 text-sm">{stat.label}</p>
+              </div>
+            ))}
           </motion.div>
         </div>
       </div>
