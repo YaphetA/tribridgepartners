@@ -7,7 +7,7 @@ import { Menu, X, ChevronDown } from "lucide-react";
 const navLinks = [
   { label: "Services", href: "#services" },
   { label: "Ethiopia", href: "#ethiopia" },
-  { label: "Who We Serve", href: "#industries" },
+  { label: "Industries", href: "#industries" },
   { label: "Why Tribridge", href: "#why-us" },
 ];
 
